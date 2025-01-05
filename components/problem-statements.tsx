@@ -1,39 +1,44 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { HoverEffect } from "./ui/card-hover-effect";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const problems = [
   {
     title: "AI for Healthcare",
-    description: "Develop an AI-powered solution to improve early disease detection and diagnosis in rural areas.",
+    description:
+      "Develop an AI-powered solution to improve early disease detection and diagnosis in rural areas.",
     category: "Healthcare",
     difficulty: "Hard",
-    icon: "🏥"
+    icon: "🏥",
   },
   {
     title: "Smart Water Management",
-    description: "Create an IoT-based system for efficient water distribution and conservation in urban areas.",
+    description:
+      "Create an IoT-based system for efficient water distribution and conservation in urban areas.",
     category: "Environment",
     difficulty: "Medium",
-    icon: "💧"
+    icon: "💧",
   },
   {
     title: "EdTech for Accessibility",
-    description: "Design an educational platform that caters to students with different learning abilities and disabilities.",
+    description:
+      "Design an educational platform that caters to students with different learning abilities and disabilities.",
     category: "Education",
     difficulty: "Medium",
-    icon: "📚"
+    icon: "📚",
   },
   {
     title: "Blockchain for Food Traceability",
-    description: "Implement a blockchain solution to enhance transparency in the food supply chain.",
+    description:
+      "Implement a blockchain solution to enhance transparency in the food supply chain.",
     category: "Agriculture",
     difficulty: "Hard",
-    icon: "🌾"
-  }
-]
+    icon: "🌾",
+  },
+];
 
 export default function ProblemStatements() {
   return (
@@ -47,8 +52,9 @@ export default function ProblemStatements() {
         >
           Problem Statements
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {problems.map((problem, index) => (
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> */}
+        <HoverEffect items={problems} />
+        {/* {problems.map((problem, index) => (
             <motion.div
               key={problem.title}
               initial={{ opacity: 0, y: 50 }}
@@ -63,7 +69,9 @@ export default function ProblemStatements() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-foreground/80 mb-4">{problem.description}</p>
+                  <p className="text-foreground/80 mb-4">
+                    {problem.description}
+                  </p>
                   <div className="flex justify-between items-center">
                     <Badge variant="secondary">{problem.category}</Badge>
                     <Badge variant="outline">{problem.difficulty}</Badge>
@@ -71,10 +79,9 @@ export default function ProblemStatements() {
                 </CardContent>
               </Card>
             </motion.div>
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
       </div>
     </section>
-  )
+  );
 }
-

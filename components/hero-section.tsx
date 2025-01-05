@@ -1,12 +1,26 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { TypeAnimation } from 'react-type-animation'
-import { Cpu, Heart, Code, Users } from 'lucide-react'
-import Link from 'next/link'
-import { RegisterBtn } from "./RegisterButton"
-
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+// import { TypeAnimation } from "react-type-animation";
+import { Cpu, Heart, Code, Users } from "lucide-react";
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import Link from "next/link";
+import { RegisterBtn } from "./RegisterButton";
+const words = [
+  {
+    text: "Inovate ,",
+  },
+  {
+    text: "Create",
+  },
+  {
+    text: "and",
+  },
+  {
+    text: "Impact",
+  },
+];
 export default function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pb-20 pt-24">
@@ -18,10 +32,12 @@ export default function HeroSection() {
           className="flex items-center justify-center gap-2 mb-8"
         >
           <Heart className="text-red-500 h-5 w-5" />
-          <span className="text-primary font-medium text-lg">A Charity Hackathon by GeekRoom</span>
+          <span className="text-primary font-medium text-lg">
+            A Charity Hackathon by GeekRoom
+          </span>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           className="text-7xl md:text-9xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-cyan-500 to-blue-600"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,24 +46,8 @@ export default function HeroSection() {
           CodeSeva
         </motion.h1>
 
-        <motion.div
-          className="text-3xl md:text-5xl mb-12 text-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          <TypeAnimation
-            sequence={[
-              'Innovate',
-              2000,
-              'Create',
-              2000,
-              'Impact',
-              2000
-            ]}
-            wrapper="span"
-            repeat={Infinity}
-          />
+        <motion.div className="text-3xl md:text-5xl text-center flex justify-center items-center mb-12 text-foreground">
+          <TypewriterEffectSmooth words={words} />
         </motion.div>
 
         <motion.div
@@ -61,7 +61,7 @@ export default function HeroSection() {
 </a>
 
           <Link href="#countdown" passHref>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               className="bg-background/50 backdrop-blur-sm text-foreground hover:bg-accent hover:text-accent-foreground text-lg px-10 py-6 rounded-full min-w-[200px] shadow-lg hover:shadow-xl transition-all duration-300"
@@ -111,6 +111,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
