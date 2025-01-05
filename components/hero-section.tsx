@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Cpu, Heart, Code, Users } from "lucide-react";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 import Link from "next/link";
-import { RegisterBtn } from "./registerButton";
+import { RegisterBtn } from "./RegisterBtn";
+
 const words = [
   {
     text: "Inovate ,",
