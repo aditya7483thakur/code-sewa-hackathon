@@ -33,6 +33,7 @@ export default function Home() {
         <FaqSection />
       </main>
       <Footer />
+      </TracingBeam>
     </div>
   )
 }
