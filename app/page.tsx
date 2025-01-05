@@ -17,7 +17,6 @@ const InteractiveConstellation = dynamic(() => import('@/components/InteractiveC
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-
       <WaveBackground />
       <InteractiveConstellation />
       <Navigation />
@@ -32,10 +31,8 @@ export default function Home() {
         <ScheduleTimeline />
         <PrizesSection />
         <FaqSection />
-       
       </main>
       <Footer />
-      </TracingBeam>
     </div>
   )
 }

@@ -6,19 +6,19 @@ import {
   ModalContent,
   ModalFooter,
   ModalTrigger,
-} from "../components/ui/animated-modal"
+} from "./ui/animated-modal"
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function RegisterBtn() {
   
   return (
-    <div className="py-4  flex items-center justify-center">
+    <div className="py-40  flex items-center justify-center">
       <Modal>
         <ModalTrigger className="bg-background/50 backdrop-blur dark:text-white text-black flex justify-center text-lg px-10 py-2.5 rounded-full min-w-[200px] border border-input bg-background shadow-lg group/modal-btn">
           <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
             Register Now
-          </span>
+          </span>   
           <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
             ✈️
           </div>
