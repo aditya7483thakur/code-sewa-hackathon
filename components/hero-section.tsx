@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Cpu, Heart, Code, Users } from "lucide-react";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 import Link from "next/link";
+import { RegisterBtn } from "./RegisterButton";
 const words = [
   {
     text: "Inovate ,",
@@ -55,14 +56,10 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <Link href="/register" passHref>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-6 rounded-full min-w-[200px] shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Register Now
-            </Button>
-          </Link>
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+  <RegisterBtn />
+</a>
+
           <Link href="#countdown" passHref>
             <Button
               size="lg"
