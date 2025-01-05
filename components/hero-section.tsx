@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Cpu, Heart, Code, Users } from "lucide-react";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 import Link from "next/link";
+import { RegisterBtn } from "./RegisterBtn";
+
 const words = [
   {
     text: "Inovate ,",
@@ -50,19 +52,15 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="flex flex-col md:flex-row gap-6 justify-center items-center mb-16"
+          className="flex flex-col md:flex-row gap-6 justify-center items-center mb-12 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <Link href="/register" passHref>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-6 rounded-full min-w-[200px] shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Register Now
-            </Button>
-          </Link>
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+  <RegisterBtn />
+</a>
+
           <Link href="#countdown" passHref>
             <Button
               size="lg"
