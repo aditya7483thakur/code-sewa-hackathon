@@ -22,7 +22,7 @@ export default function Home() {
       <InteractiveConstellation />
       <Navigation />
       <TracingBeam className=''>
-      <main className="relative z-10">
+      <main className="relative md:z-10">
       
         <HeroSection />
         <CountdownTimer />
