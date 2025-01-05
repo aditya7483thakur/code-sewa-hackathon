@@ -10,20 +10,16 @@ import FaqSection from '@/components/faq-section'
 import Footer from '@/components/footer'
 import WaveBackground from '@/components/WaveBackground'
 import dynamic from 'next/dynamic'
-import { TracingBeam } from '@/components/ui/tracing-beam'
 
 const InteractiveConstellation = dynamic(() => import('@/components/InteractiveConstellation'), { ssr: false })
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-
       <WaveBackground />
       <InteractiveConstellation />
       <Navigation />
-      <TracingBeam className=''>
       <main className="relative z-10">
-      
         <HeroSection />
         <CountdownTimer />
         <AboutSection />
@@ -32,10 +28,8 @@ export default function Home() {
         <ScheduleTimeline />
         <PrizesSection />
         <FaqSection />
-       
       </main>
       <Footer />
-      </TracingBeam>
     </div>
   )
 }
