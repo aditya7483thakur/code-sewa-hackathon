@@ -11,15 +11,18 @@ import Footer from '@/components/footer'
 import WaveBackground from '@/components/WaveBackground'
 import dynamic from 'next/dynamic'
 import { TracingBeam } from '@/components/ui/tracing-beam'
+import { FloatingDockDemo } from '@/components/FloatingDock'
 
 const InteractiveConstellation = dynamic(() => import('@/components/InteractiveConstellation'), { ssr: false })
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground relative">
+      
       <WaveBackground />
       <InteractiveConstellation />
       <Navigation />
+     
       <TracingBeam className=''>
       <main className="relative md:z-10">
       
@@ -30,9 +33,12 @@ export default function Home() {
         <ProblemStatements />
         <ScheduleTimeline />
         <PrizesSection />
+        
         <FaqSection />
       </main>
+      
       <Footer />
+      
       </TracingBeam>
     </div>
   )
