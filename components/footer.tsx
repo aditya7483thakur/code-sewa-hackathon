@@ -1,15 +1,32 @@
-"use client"
+"use client";
 
-import { Facebook, Twitter, Instagram, Linkedin, Send } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import {  Twitter, Instagram, Linkedin,Github, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { FloatingDockDemo } from "./FloatingDock";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [isMdOrLarger, setIsMdOrLarger] = useState(true);
+
+  // Check screen size on mount and on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMdOrLarger(window.innerWidth >= 768); // md breakpoint (768px)
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log("Subscribed to newsletter")
-  }
+    e.preventDefault();
+    console.log("Subscribed to newsletter");
+  };
 
   return (
     <footer className="relative bg-background text-foreground border-t overflow-hidden">
@@ -17,7 +34,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <h2 className="text-2xl font-bold text-primary mb-4">CodeSewa Hackathon</h2>
-            <p className="mb-4 text-foreground/80">Empowering innovation and fostering creativity through technology.</p>
+            <p className="mb-4 text-foreground/80">
+              Empowering innovation and fostering creativity through technology.
+            </p>
             <form onSubmit={handleSubscribe} className="flex gap-2">
               <Input type="email" placeholder="Enter your email" required />
               <Button type="submit" size="icon">
@@ -28,10 +47,26 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#tracks" className="hover:text-primary transition-colors">Tracks</a></li>
-              <li><a href="#schedule" className="hover:text-primary transition-colors">Schedule</a></li>
-              <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
+              <li>
+                <a href="#about" className="hover:text-primary transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#tracks" className="hover:text-primary transition-colors">
+                  Tracks
+                </a>
+              </li>
+              <li>
+                <a href="#schedule" className="hover:text-primary transition-colors">
+                  Schedule
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-primary transition-colors">
+                  FAQ
+                </a>
+              </li>
             </ul>
           </div>
           <div>
@@ -44,21 +79,26 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-foreground/20 flex flex-col sm:flex-row justify-between items-center">
           <p>&copy; 2024 CodeSewa Hackathon. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                className="text-foreground/60 hover:text-primary transition-colors"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Icon className="h-5 w-5" />
-              </motion.a>
-            ))}
+            {isMdOrLarger ? (
+              <FloatingDockDemo />
+            ) : (
+              [ Github,Twitter, Instagram, Linkedin].map((Icon, index) => (
+                <motion.a
+                  key={index}
+                  href="#"
+                  className="text-foreground/60 hover:text-primary transition-colors"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <div className="bg-gray-200 dark:bg-neutral-800 rounded-full p-2 ">
+                  <Icon className=" text-neutral-500 " />
+                  </div>
+                </motion.a>
+              ))
+            )}
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
