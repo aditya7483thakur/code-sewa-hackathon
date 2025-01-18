@@ -86,7 +86,7 @@ export default function PrizesSection() {
           {best.map((prize, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-background to-background/50 col-start-2 rounded-lg p-6 text-center shadow-lg border border-primary/20"
+              className="bg-gradient-to-br from-background to-background/50 col-start-0 md:col-start-2 rounded-lg p-6 text-center shadow-lg border border-primary/20"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
