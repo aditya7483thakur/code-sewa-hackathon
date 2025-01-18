@@ -59,14 +59,14 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <Link href="/register">
+            <a href="https://reskilll.com/hack/codeseva" target="_blank">
               <Button
                 size="sm"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300"
               >
                 Register Now
               </Button>
-            </Link>
+            </a>
             <Button
               size="icon"
               variant="ghost"

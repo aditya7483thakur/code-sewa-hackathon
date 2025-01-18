@@ -4,24 +4,20 @@ import { motion } from 'framer-motion'
 import { cn } from "@/lib/utils"
 
 const scheduleData = {
-  "21st February 2025": [
-    { time: "9:00 am", event: "Entry" },
-    { time: "10:00 am", event: "Breakfast" },
-    { time: "10:45 am", event: "Hacking" },
-    { time: "11:30 am", event: "Coding Workshop" },
-    { time: "13:30 pm", event: "Lunch+Dance" },
-    { time: "16:00 pm", event: "Mentoring R1" },
-    { time: "20:00 pm", event: "Dinner" },
-    { time: "00:00 am", event: "Midnight DJ" },
+  "16th February 2025": [
+    { time: "8:00 am", event: "Hackathon Begins" },
+    { time: "17:00 pm", event: "Idea Submission Deadline" },
+    { time: "18:00 pm", event: "Mentoring Round Starts" },
+    { time: "21:00 pm", event: "Mentoring Round Ends" },
   ],
-  "22nd February 2025": [
-    { time: "06:00 am", event: "Morning Tea" },
-    { time: "08:30 am", event: "Breakfast" },
-    { time: "11:00 am", event: "Mentoring R2" },
-    { time: "13:00 pm", event: "Lunch" },
-    { time: "15:00 pm", event: "Result Declaration (top 15)" },
-    { time: "16:30 pm", event: "Judgement Round begins" },
-    { time: "18:30 pm", event: "Winner Declaration" },
+  "17th February 2025": [
+    { time: "12:00 pm", event: "Mentoring Round Results" },
+  ],
+  "1st March 2025": [
+    { time: "11:00 am", event: "Reporting Time" },
+    { time: "12:30 pm", event: "Presentation Round" },
+    { time: "15:00 pm", event: "Lunch and Snacks" },
+    { time: "17:00 pm", event: "Result Declaration" },
   ]
 }
 
