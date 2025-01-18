@@ -57,7 +57,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://reskilll.com/hack/codeseva" target="_blank" rel="noopener noreferrer">
   <RegisterBtn />
 </a>
 
