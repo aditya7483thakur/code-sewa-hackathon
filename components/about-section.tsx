@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
-import { useRef } from 'react'
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
 
 export default function AboutSection() {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
-  })
+    offset: ["start end", "end start"],
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
     <section id="about" className="py-20 bg-background" ref={ref}>
@@ -23,8 +23,12 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-foreground mb-4">About CodeSeva</h2>
-          <p className="text-xl text-foreground/80">Empowering Innovation for a Better Tomorrow</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">
+            About CodeSeva
+          </h2>
+          <p className="text-xl text-foreground/80">
+            Empowering Innovation for a Better Tomorrow
+          </p>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -37,7 +41,7 @@ export default function AboutSection() {
             <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-cyan-300 rounded-lg blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
             <div className="relative w-full h-64 md:h-80 bg-gray-200 rounded-lg overflow-hidden">
               <Image
-                src="/images/hackathon-image.jpg"
+                src="https://storage.googleapis.com/reskilll/Untitled%20designpPqHYjE.jpg"
                 alt="CodeSeva Hackathon"
                 layout="fill"
                 objectFit="cover"
@@ -52,11 +56,15 @@ export default function AboutSection() {
             viewport={{ once: true }}
             style={{ y }}
           >
-            <h3 className="text-2xl font-semibold text-foreground mb-4">Join the Tech Revolution</h3>
+            <h3 className="text-2xl font-semibold text-foreground mb-4">
+              Join the Tech Revolution
+            </h3>
             <p className="text-foreground/80 mb-6">
-              CodeSeva is more than just a hackathon; it's a movement to drive positive change through technology. 
-              Organized by Geek Room, this charitable hackathon brings together the brightest minds to solve real-world problems 
-              and create innovative solutions that can make a difference in our communities and beyond.
+              CodeSeva is more than just a hackathon; it's a movement to drive
+              positive change through technology. Organized by Geek Room, this
+              charitable hackathon brings together the brightest minds to solve
+              real-world problems and create innovative solutions that can make
+              a difference in our communities and beyond.
             </p>
             <ul className="space-y-4">
               {[
@@ -64,7 +72,7 @@ export default function AboutSection() {
                 "Mentorship from industry experts",
                 "Exciting prizes and networking opportunities",
                 "A chance to turn your ideas into reality",
-                "All proceeds go to charitable causes"
+                "All proceeds go to charitable causes",
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -83,6 +91,5 @@ export default function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

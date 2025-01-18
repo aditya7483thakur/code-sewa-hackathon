@@ -7,36 +7,36 @@ import { Badge } from "@/components/ui/badge";
 
 const problems = [
   {
-    title: "AI for Healthcare",
+    title: "Accessible Care Initiative",
     description:
-      "Develop an AI-powered solution to improve early disease detection and diagnosis in rural areas.",
+      " Like the COVID pandemic , many such diseases exist in today's world that can be cured easily. However , many people are unable to get the proper treatment due to lack of financial autonomy. Create a solution that can help bridge the gap between the people and getting the proper treatment for the disease.",
     category: "Healthcare",
     difficulty: "Hard",
     icon: "🏥",
   },
   {
-    title: "Smart Water Management",
+    title: "Athlete Uplift Platform",
     description:
-      "Create an IoT-based system for efficient water distribution and conservation in urban areas.",
+      " India possesses a lot of potential in the sports industry with bucketloads of success in cricket and hockey. However , they lack the proper talent for other fields like football , which is a growing concern for India. Many talented atheletes come from poor economic backgrounds and are unable to make it to the national trials to show their worth. Your task is to create a virtual , affordable platform for these atheletes to get financial backing and support to fulfill their full potential and make India proud on the big stage!",
     category: "Environment",
     difficulty: "Medium",
-    icon: "💧",
+    icon: "🏏",
   },
   {
-    title: "EdTech for Accessibility",
+    title: "SmartFinance Hub",
     description:
-      "Design an educational platform that caters to students with different learning abilities and disabilities.",
+      " Middle-class families in today's world find it difficult to manage their finances and end up taking lots of loans and debts upon themselves. They lack the financial guidance and mindset needed to keep their finances in check. Create a platform for these families where they can regulate their finances , and also keep a check on their spendings and suggest them ways to invest finances.",
     category: "Education",
     difficulty: "Medium",
-    icon: "📚",
+    icon: "📱",
   },
   {
-    title: "Blockchain for Food Traceability",
+    title: "Pollution Monitor System",
     description:
-      "Implement a blockchain solution to enhance transparency in the food supply chain.",
+      "Extreme Pollution levels in Delhi have always posed a huge problem for the state as well as the central government. Lack of regulation of emissions across the state have contributed massively to this problem. Devise a solution to keep a track of pollution levels across Delhi and alert officials wherever the emissions are above the mandated levels!",
     category: "Agriculture",
     difficulty: "Hard",
-    icon: "🌾",
+    icon: "😷",
   },
 ];
 

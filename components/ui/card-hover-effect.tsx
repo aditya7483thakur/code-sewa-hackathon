@@ -21,6 +21,7 @@ export const HoverEffect = ({
       {items.map((item: any, idx: number) => (
         <div
           //   href={""}
+          key={idx}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -55,10 +56,6 @@ export const HoverEffect = ({
             </CardHeader>
             <CardContent>
               <p className="text-foreground/80 mb-4">{item.description}</p>
-              <div className="flex justify-between items-center">
-                <Badge variant="secondary">{item.category}</Badge>
-                <Badge variant="outline">{item.difficulty}</Badge>
-              </div>
             </CardContent>
           </Card>
         </div>
