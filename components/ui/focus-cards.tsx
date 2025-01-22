@@ -42,9 +42,11 @@ export const Card = React.memo(
           {card.name}
         </div>
         <div className="flex space-x-4 mt-2 hover:cursor-pointer text-xl">
-          <FaGithub />
+          {/* <FaGithub /> */}
+          <a href={card.linkedin} target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
-          <FaTwitter />
+          </a>
+          {/* <FaTwitter /> */}
         </div>
       </div>
     </div>
