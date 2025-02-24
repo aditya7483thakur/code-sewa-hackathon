@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import { cn } from "@/lib/utils"
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const scheduleData = {
   "16th February 2025": [
@@ -18,12 +18,12 @@ const scheduleData = {
     { time: "12:30 pm", event: "Presentation Round" },
     { time: "15:00 pm", event: "Lunch and Snacks" },
     { time: "17:00 pm", event: "Result Declaration" },
-  ]
-}
+  ],
+};
 
 export default function ScheduleTimeline() {
   return (
-    <section className="py-20 bg-black text-white min-h-screen">
+    <section className="py-20 bg-black text-white min-h-screen" id="schedule">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center mb-16"
@@ -58,18 +58,25 @@ export default function ScheduleTimeline() {
                       key={`${date}-${event.time}-${event.event}`}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: (index * 0.1) + (dayIndex * 0.2) }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.1 + dayIndex * 0.2,
+                      }}
                       className={cn(
                         "flex items-center gap-8",
                         index % 2 === 0 ? "flex-row" : "flex-row-reverse"
                       )}
                     >
-                      <div className={cn(
-                        "w-1/2 flex",
-                        index % 2 === 0 ? "justify-end" : "justify-start"
-                      )}>
+                      <div
+                        className={cn(
+                          "w-1/2 flex",
+                          index % 2 === 0 ? "justify-end" : "justify-start"
+                        )}
+                      >
                         <div className="bg-gray-900/80 backdrop-blur-sm p-4 rounded-lg max-w-sm w-full hover:bg-gray-900/90 transition-colors">
-                          <div className="text-xl font-bold text-cyan-400">{event.time}</div>
+                          <div className="text-xl font-bold text-cyan-400">
+                            {event.time}
+                          </div>
                           <div className="text-white/90">{event.event}</div>
                         </div>
                       </div>
@@ -89,6 +96,5 @@ export default function ScheduleTimeline() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

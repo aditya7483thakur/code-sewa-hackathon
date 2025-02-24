@@ -1,16 +1,36 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import { Code, Globe, Cpu, Shield } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { AIMLAnimation, CybersecurityAnimation } from './track-animations'
+import { motion } from "framer-motion";
+import { Code, Globe, Cpu, Shield } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// import { AIMLAnimation, CybersecurityAnimation } from './track-animations'
 
 const tracks = [
-  { name: 'Web3 & Blockchain', icon: Globe, color: 'from-blue-400 to-blue-600', animation: null },
-  { name: 'AI & Machine Learning', icon: Cpu, color: 'from-green-400 to-green-600', animation: AIMLAnimation },
-  { name: 'Cybersecurity', icon: Shield, color: 'from-red-400 to-red-600', animation: CybersecurityAnimation },
-  { name: 'Open Innovation', icon: Code, color: 'from-purple-400 to-purple-600', animation: null },
-]
+  {
+    name: "Web3 & Blockchain",
+    icon: Globe,
+    color: "from-blue-400 to-blue-600",
+    animation: null,
+  },
+  {
+    name: "AI & Machine Learning",
+    icon: Cpu,
+    color: "from-green-400 to-green-600",
+    // animation: AIMLAnimation,
+  },
+  {
+    name: "Cybersecurity",
+    icon: Shield,
+    color: "from-red-400 to-red-600",
+    // animation: CybersecurityAnimation,
+  },
+  {
+    name: "Open Innovation",
+    icon: Code,
+    color: "from-purple-400 to-purple-600",
+    animation: null,
+  },
+];
 
 export default function TracksSection() {
   return (
@@ -35,14 +55,13 @@ export default function TracksSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className={`bg-gradient-to-br ${track.color} text-white overflow-hidden h-full`}>
+              <Card
+                className={`bg-gradient-to-br ${track.color} text-white overflow-hidden h-full`}
+              >
                 <CardHeader className="p-6">
-                  {track.animation ? (
-                    <track.animation />
-                  ) : (
-                    <track.icon className="w-12 h-12 mb-4" />
-                  )}
-                  <CardTitle className="text-xl font-semibold">{track.name}</CardTitle>
+                  <CardTitle className="text-xl font-semibold">
+                    {track.name}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <p className="text-white/80">
@@ -55,6 +74,5 @@ export default function TracksSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

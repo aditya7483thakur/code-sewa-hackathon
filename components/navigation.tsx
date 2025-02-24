@@ -1,44 +1,45 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { useTheme } from 'next-themes'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { name: 'About', href: '/#about' },
-  { name: 'Tracks', href: '/#tracks' },
-  { name: 'Schedule', href: '/#schedule' },
-  { name: 'Sponsors', href: '/#sponsors' },
-  { name: 'FAQ', href: '/#faq' },
-  { name: 'Mentors', href: '/mentors' },
-]
+  { name: "About", href: "/#about" },
+  { name: "Tracks", href: "/#tracks" },
+  { name: "Schedule", href: "/#schedule" },
+  { name: "Sponsors", href: "/#sponsors" },
+  { name: "FAQ", href: "/#faq" },
+];
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const pathname = usePathname()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md shadow-md py-2"
+          : "bg-transparent py-4"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -46,7 +47,10 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-primary cursor-pointer">
+          <Link
+            href="/"
+            className="text-2xl font-bold text-primary cursor-pointer"
+          >
             CodeSeva
           </Link>
           <div className="hidden md:flex space-x-4">
@@ -73,7 +77,11 @@ export default function Navigation() {
               onClick={toggleTheme}
               className="text-foreground hover:text-primary"
             >
-              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
           </div>
           <div className="md:hidden flex items-center">
@@ -83,7 +91,11 @@ export default function Navigation() {
               onClick={toggleTheme}
               className="mr-2 text-foreground hover:text-primary"
             >
-              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
@@ -101,7 +113,7 @@ export default function Navigation() {
           <motion.div
             className="md:hidden bg-background dark:bg-background/90 backdrop-blur-md"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
@@ -129,6 +141,5 @@ export default function Navigation() {
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }
-

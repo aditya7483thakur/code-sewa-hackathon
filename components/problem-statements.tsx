@@ -38,6 +38,16 @@ const problems = [
     difficulty: "Hard",
     icon: "😷",
   },
+
+  {
+    title:
+      "Real-Time RAG with Pathway: Adaptive AI-Powered Knowledge Retrieval",
+    description:
+      "Create a fully functional end to end real-time RAG application that leverages Pathway as its core orchestrator for data ingestion, incremental indexing (vector/hybrid), and REST API deployment. You are free to use any domain (health, finance, etc.) and any agentic framework (e.g., LangGraph, Crew AI, AutoGen, OpenAI Swarm) if you want to add agent functionality. However, your solution must demonstrate how Pathway’s real-time pipeline automatically adapts to data updates and provides fresh context to the LLM or agent.",
+    category: "Agriculture",
+    difficulty: "Hard",
+    icon: "🚀",
+  },
 ];
 
 export default function ProblemStatements() {

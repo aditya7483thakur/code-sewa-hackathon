@@ -68,7 +68,7 @@ export default function AboutSection() {
             </p>
             <ul className="space-y-4">
               {[
-                "48 hours of non-stop innovation",
+                "Non-stop innovation",
                 "Mentorship from industry experts",
                 "Exciting prizes and networking opportunities",
                 "A chance to turn your ideas into reality",
