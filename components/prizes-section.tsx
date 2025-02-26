@@ -7,19 +7,19 @@ import { useRef } from "react";
 const prizes = [
   {
     place: "1st Place",
-    prize: "₹15,000",
+    prize: "₹10,000",
     icon: Trophy,
     color: "from-yellow-400 to-yellow-600",
   },
   {
     place: "2nd Place",
-    prize: "₹12,000",
+    prize: "₹8,000",
     icon: Award,
     color: "from-gray-400 to-gray-600",
   },
   {
     place: "3rd Place",
-    prize: "₹8,000",
+    prize: "₹5,000",
     icon: Gift,
     color: "from-orange-400 to-orange-600",
   },
@@ -28,7 +28,7 @@ const prizes = [
 const best = [
   {
     place: "Best freshers team",
-    prize: "₹5,000",
+    prize: "₹3,000",
     icon: Star,
     color: "from-yellow-400 to-yellow-600",
   },
